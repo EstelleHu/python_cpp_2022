@@ -10,6 +10,10 @@ char const* greet() {
   return "hello, world";
 }
 
+char const* sayBye() {
+  return "good bye, world";
+}
+
 namespace py = pybind11;
 
 
@@ -19,4 +23,5 @@ PYBIND11_MODULE(hello_component,greetings)
   
   greetings.def("greet", &greet, "a function saying hello");
   greetings.def("getVersion", &getVersion, "a function returning the version");
+  greetings.def("sayBye", &sayBye, "a function saying good bye");
 }
